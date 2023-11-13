@@ -25,8 +25,13 @@ const LETTER_VALUES = {
   X: 8,
   Y: 4,
   Z: 10,
-}
+};
 
 export const score = (word) => {
-  
+  const wordArray = word.toUpperCase().split("");
+  const reducer = (a, c) => {
+    return a + LETTER_VALUES[c];
+  };
+  const sum = wordArray.reduce(reducer, 0);
+  return sum;
 };
